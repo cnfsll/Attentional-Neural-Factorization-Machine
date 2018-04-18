@@ -53,9 +53,3 @@ model.train(data.Train_data, data.Validation_data, data.Test_data)
 best_epoch  = np.argmin(model.valid_loss)
 print ("Best Iter(validation)= %d\t train = %.4f, valid = %.4f, test = %.4f [%.1f s]" 
        %(best_epoch+1, model.train_loss[best_epoch], model.valid_loss[best_epoch], model.test_loss[best_epoch], time()-t1))
-
-# train:0.0906；valid：0.3253；test:0.3291 vaild-train = 0.2347 keep_prob = 0.8 Em_factor = 64 Lamda_attention = 10.0
-# train:0.1361；valid：0.3272；test:0.3400 vaild-train = 0.1911 Em_factor = 32 减少了gap，但是训练集误差减小得不够多，使得最终的验证集误差比较大
-# train:0.1100；valid：0.3225；test:0.3252 vaild-train = 0.2225 keep_prob = 0.7 Lamda_attention = 10.0 减少了过拟合， 从误差曲线上看，训练饱和程度比上述小，还可继续训练
-# train:0.1127；valid：0.3222；test:0.3281 vaild-train = 0.2095 keep_prob = 0.7 Lamda_attention = 15.0 Epoch = 50减少了过拟合，但测试集误差增大了，从误差曲线上看，训练饱和程度比上述小，还可继续训练
-# train:0.0843；valid：0.3171；test:0.3206 vaild-train = 0.2328 keep_prob = 0.7 Lamda_attention = 15.0 Epoch = 100 训练更加充分
